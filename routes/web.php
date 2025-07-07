@@ -19,13 +19,21 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-     Route::resource('categories', CategoryController::class);
-    Route::resource('products', ProductController::class);
+    //untuk pilihan load, insert, update, delete
+    Route::get('pilihan',function(){
+        return view('components.pilihan');
+    })->name('pilihan');
 
-    Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
-    Route::post('/transactions', [TransactionController::class, 'store'])->name('transactions.store');
-    Route::put('/transactions/{id}', [TransactionController::class, 'update'])->name('transactions.update');
-    Route::delete('/transactions/{id}', [TransactionController::class, 'destroy'])->name('transactions.destroy');
+    // untuk tabel categories
+    Route::get('categories/edit', [CategoryController::class, 'edit'])->name('categories.edit');
+    Route::resource('categories',CategoryController::class)->except(['edit']);
+    // untuk tabel products
+    Route::get('products/edit', [ProductController::class, 'edit'])->name('products.edit');
+    Route::resource('products', ProductController::class)->except(['edit']);;
+
+    // untuk tabel transactions
+    Route::get('transactions/edit', [TransactionController::class, 'edit'])->name('transactions.edit');
+    Route::resource('transactions', TransactionController::class)->except(['edit']);;
 });
 
 require __DIR__.'/auth.php';

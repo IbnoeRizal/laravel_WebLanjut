@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+    .btn { @apply px-4 py-2 rounded text-white font-bold; }
+    .btn-blue { @apply bg-blue-500 hover:bg-blue-600; }
+    .btn-green { @apply bg-green-500 hover:bg-green-600; }
+    .btn-red { @apply bg-red-500 hover:bg-red-600; }

@@ -13,6 +13,42 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <!-- Custom script -->
+        <script defer src="{{ asset('js/custom.js') }}"></script>
+        <script>
+            const Routing = Object.freeze({
+                pilihan: "{{ route('pilihan') }}",
+                products: {
+                    create: "{{ route('products.create') }}",
+                    store: "{{ route('products.store') }}",
+                    edit: "{{ route('products.edit')}}",
+                    update: "{{ route('products.update', ['product' => '__ID__']) }}",
+                    destroy: "{{ route('products.destroy', ['product' => '__ID__']) }}",
+                    show: "{{ route('products.show', ['product' => '__ID__']) }}",
+                    index: "{{ route('products.index') }}",
+                },
+                transactions: {
+                    create: "{{ route('transactions.create') }}",
+                    store: "{{ route('transactions.store') }}",
+                    edit: "{{ route('transactions.edit') }}",
+                    update: "{{ route('transactions.update', ['transaction' => '__ID__']) }}",
+                    destroy: "{{ route('transactions.destroy', ['transaction' => '__ID__']) }}",
+                    show: "{{ route('transactions.show', ['transaction' => '__ID__']) }}",
+                    index: "{{ route('transactions.index') }}",
+                },
+                categories: {
+                    create: "{{ route('categories.create') }}",
+                    store: "{{ route('categories.store') }}",
+                    edit: "{{ route('categories.edit') }}",
+                    update: "{{ route('categories.update', ['category' => '__ID__']) }}",
+                    destroy: "{{ route('categories.destroy', ['category' => '__ID__']) }}",
+                    show: "{{ route('categories.show', ['category' => '__ID__']) }}",
+                    index: "{{ route('categories.index') }}",
+                },
+            });
+        </script>
+
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
