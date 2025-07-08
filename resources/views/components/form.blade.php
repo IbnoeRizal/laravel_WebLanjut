@@ -191,7 +191,7 @@
                 <div>
                     <label for="quantity" class="block text-sm font-semibold mb-1">Jumlah Pembelian</label>
                     <input type="number" name="quantity" id="quantity" class="w-full p-2 rounded bg-white text-black"
-                        min="1" onchange="onQuantityChange()" required>
+                        min="1" onkeyup="onQuantityChange()" required>
                 </div>
 
                 {{-- Total Harga --}}
@@ -300,7 +300,7 @@
                 <div>
                     <label for="quantity" class="block text-sm font-semibold mb-1">Jumlah Pembelian</label>
                     <input type="number" name="quantity" id="quantity" class="w-full p-2 rounded bg-white text-black"
-                        min="1" onkeydown="onQuantityChange()" required>
+                        min="1"  onkeyup="onQuantityChange()" required>
                 </div>
 
                 {{-- Total Harga (readonly) --}}
